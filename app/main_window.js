@@ -8,7 +8,8 @@ class MainWindow extends BrowserWindow{
             heigth: 500,
             frame: false, // hide native status bar
             resizable: false, // avoid resize window application
-            show: false // hide window when app start
+            show: false, // hide window when app start
+            webPreferences: { backgroundThrottling: false } // avoid chrome limit resource whe focus go away
         });
         this.loadURL(url);
         this.on('blur', this.onBlur.bind(this));
